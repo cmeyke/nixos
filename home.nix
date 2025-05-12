@@ -15,7 +15,7 @@
 
   imports = [
     plasma-manager.homeManagerModules.plasma-manager
-    ./plasma.nix
+    # ./plasma.nix
   ];
 
   # This value determines the Home Manager release that your
