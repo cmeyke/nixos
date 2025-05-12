@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, plasma-manager, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -12,6 +12,11 @@
     userName = "Carsten Meyke";
     userEmail = "carsten.meyke@gmail.com";
   };
+
+  imports = [
+    plasma-manager.homeManagerModules.plasma-manager
+    ./plasma.nix
+  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
