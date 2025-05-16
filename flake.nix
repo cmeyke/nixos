@@ -2,13 +2,19 @@
   description = "A simple NixOS flake";
 
   inputs = {
-    # NixOS official package source, using the unstable branch here
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, plasma-manager, ... }@inputs: {
     # Please replace my-nixos with your hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -24,6 +30,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.user = import ./home.nix;
+          home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
         }
       ];
