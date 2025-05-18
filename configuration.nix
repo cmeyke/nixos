@@ -95,8 +95,6 @@
     nixfmt
     nil
     simple-scan
-    vivaldi
-    vivaldi-ffmpeg-codecs
   ];
 
   hardware.sane.enable = true; # enables support for SANE scanners
