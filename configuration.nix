@@ -56,7 +56,7 @@
   users.users.user = {
     isNormalUser = true;
     description = "user";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "scanner" "lp" ];
     packages = with pkgs; [ ];
   };
 
@@ -94,7 +94,12 @@
     nixd
     nixfmt
     nil
+    simple-scan
+    vivaldi
+    vivaldi-ffmpeg-codecs
   ];
+
+  hardware.sane.enable = true; # enables support for SANE scanners
 
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
