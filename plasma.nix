@@ -11,12 +11,16 @@
         "org.kde.plasma.pager"
         {
           iconTasks = {
-            # System Settings" ... "KeePassXC" "Obsidian" "Remmina" "Steam" "Document Scanner"
             launchers = [
+              "applications:kdesystemsettings.desktop"
               "applications:org.kde.dolphin.desktop"
               "applications:firefox.desktop"
               "applications:org.kde.konsole.desktop"
+              "applications:org.keepassxc.KeePassXC.desktop"
+              "applications:obsidian.desktop"
+              "applications:org.remmina.Remmina.desktop"
               "applications:steam.desktop"
+              "applications:simple-scan.desktop"
             ];
           };
         }
