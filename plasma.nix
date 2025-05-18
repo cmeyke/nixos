@@ -27,7 +27,8 @@
         "org.kde.plasma.marginsseparator"
         "org.kde.plasma.systemtray"
         "org.kde.plasma.digitalclock"
-        "org.kde.plasma.showdesktop"      ];
+        "org.kde.plasma.showdesktop"
+      ];
     }
   ];
 
