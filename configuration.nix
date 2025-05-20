@@ -95,6 +95,7 @@
     nixfmt
     nil
     simple-scan
+    vscode.fhs
   ];
 
   hardware.sane.enable = true; # enables support for SANE scanners
