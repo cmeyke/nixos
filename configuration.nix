@@ -92,7 +92,7 @@
     gnupg
     pinentry
     nixd
-    nixfmt
+    nixfmt-classic
     nil
     simple-scan
     vscode.fhs
