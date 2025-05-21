@@ -96,6 +96,7 @@
     nil
     simple-scan
     vscode.fhs
+    devenv
   ];
 
   hardware.sane.enable = true; # enables support for SANE scanners
