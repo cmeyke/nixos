@@ -5,7 +5,7 @@
 { config, pkgs, ... }:
 
 let
-  msty = pkgs.callPackage ./pkgs/msty.nix {};
+  msty = pkgs.callPackage ./msty.nix {};
 in
  {
   imports = [ # Include the results of the hardware scan.
