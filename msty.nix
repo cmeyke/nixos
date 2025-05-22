@@ -1,6 +1,7 @@
 {
   appimageTools,
   fetchurl,
+  makeWrapper,
 }: let
   pname = "msty";
   version = "1.9";
@@ -14,10 +15,13 @@
 in 
   appimageTools.wrapType2 {
     inherit pname version src;
+    nativeBuildInputs = [ makeWrapper ];
     extraInstallCommands = ''
       install -m 444 -D ${appimageContents}/${pname}.desktop -t $out/share/applications
       substituteInPlace $out/share/applications/${pname}.desktop \
         --replace 'Exec=AppRun' 'Exec=${pname}'
       install -m 444 -D ${appimageContents}/${pname}.png $out/share/icons/hicolor/256x256/apps/${pname}.png
+      wrapProgram $out/bin/${pname} \
+        --set XDG_CURRENT_DESKTOP GNOME
     '';
   }
