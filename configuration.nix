@@ -101,6 +101,9 @@ in
     vscode.fhs
     devenv
     msty
+    foundry
+    lm_sensors
+    btop-cuda
   ];
 
   hardware.sane.enable = true; # enables support for SANE scanners
