@@ -106,6 +106,7 @@ in
     foundry
     lm_sensors
     btop-cuda
+    goverlay
   ];
 
   hardware.sane.enable = true; # enables support for SANE scanners
