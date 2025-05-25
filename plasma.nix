@@ -21,6 +21,7 @@
               "applications:org.remmina.Remmina.desktop"
               "applications:steam.desktop"
               "applications:simple-scan.desktop"
+              "applications:msty.desktop"
             ];
           };
         }
