@@ -109,6 +109,8 @@ in
     lm_sensors
     btop-cuda
     goverlay
+    antimicrox
+    evtest
   ];
 
   hardware.sane.enable = true; # enables support for SANE scanners
