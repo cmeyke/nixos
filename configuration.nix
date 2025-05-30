@@ -112,6 +112,7 @@ in
     antimicrox
     evtest
     guvcview
+    stable.zoom-us
   ];
 
   hardware.sane.enable = true; # enables support for SANE scanners
