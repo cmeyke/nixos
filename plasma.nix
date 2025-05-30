@@ -22,6 +22,8 @@
               "applications:steam.desktop"
               "applications:simple-scan.desktop"
               "applications:msty.desktop"
+              "applications:guvcview.desktop"
+              "applications:Zoom.desktop"
             ];
           };
         }
