@@ -111,6 +111,7 @@ in
     goverlay
     antimicrox
     evtest
+    guvcview
   ];
 
   hardware.sane.enable = true; # enables support for SANE scanners
