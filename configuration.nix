@@ -86,7 +86,6 @@ in
     pavucontrol
     htop
     nvtopPackages.full
-    ollama
     obsidian
     remmina
     mpv
@@ -185,7 +184,10 @@ in
   # system.autoUpgrade.allowReboot  = true;
 
   # List services that you want to enable:
-  services.ollama = { enable = true; };
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
   services.flatpak.enable = true;
 
   # Enable the OpenSSH daemon.
