@@ -88,7 +88,7 @@ in
     nvtopPackages.full
     obsidian
     remmina
-    mpv
+    stable.mpv
     megasync
     mangohud
     dislocker
