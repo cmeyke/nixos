@@ -17,7 +17,8 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
 
   # boot.kernelPackages = pkgs.linuxPackages_latest; # or pkgs.linuxPackages_lts
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
   boot.supportedFilesystems = [ "ntfs" ];
 
