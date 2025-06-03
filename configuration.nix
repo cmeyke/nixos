@@ -16,7 +16,8 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest; # or pkgs.linuxPackages_lts
+  # boot.kernelPackages = pkgs.linuxPackages_latest; # or pkgs.linuxPackages_lts
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   boot.supportedFilesystems = [ "ntfs" ];
 
@@ -88,7 +89,7 @@ in
     nvtopPackages.full
     obsidian
     remmina
-    stable.mpv
+    mpv
     megasync
     mangohud
     dislocker
@@ -111,7 +112,7 @@ in
     antimicrox
     evtest
     guvcview
-    stable.zoom-us
+    zoom-us
   ];
 
   hardware.sane.enable = true; # enables support for SANE scanners
