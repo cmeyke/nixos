@@ -24,6 +24,7 @@
               "applications:msty.desktop"
               "applications:guvcview.desktop"
               "applications:Zoom.desktop"
+              "applications:org.kde.spectacle.desktop"
             ];
           };
         }
