@@ -116,6 +116,7 @@ in
     zoom-us
     geekbench
     stress-ng
+    ocrmypdf
   ];
 
   hardware.sane.enable = true; # enables support for SANE scanners
