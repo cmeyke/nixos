@@ -117,9 +117,13 @@ in
     geekbench
     stress-ng
     ocrmypdf
+    libreoffice-qt
+    hunspell
+    hunspellDicts.de_DE
   ];
 
   hardware.sane.enable = true; # enables support for SANE scanners
+  hardware.bluetooth.enable = true;
 
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
