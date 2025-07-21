@@ -120,6 +120,11 @@ in
     libreoffice-qt
     hunspell
     hunspellDicts.de_DE
+    vintagestory
+  ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "dotnet-runtime-7.0.20"
   ];
 
   hardware.sane.enable = true; # enables support for SANE scanners
