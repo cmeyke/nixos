@@ -121,6 +121,7 @@ in
     hunspell
     hunspellDicts.de_DE
     vintagestory
+    killall
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
