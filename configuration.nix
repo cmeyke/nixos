@@ -122,6 +122,7 @@ in
     hunspellDicts.de_DE
     vintagestory
     killall
+    brave
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
