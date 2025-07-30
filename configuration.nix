@@ -186,6 +186,8 @@ in
 
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = false;
+  services.displayManager.sddm.autoNumlock = true;
   services.desktopManager.plasma6.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
