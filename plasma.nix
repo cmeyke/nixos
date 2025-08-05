@@ -15,6 +15,7 @@
               "applications:kdesystemsettings.desktop"
               "applications:org.kde.dolphin.desktop"
               "applications:brave-browser.desktop"
+              "applications:firefox.desktop"
               "applications:org.kde.konsole.desktop"
               "applications:org.keepassxc.KeePassXC.desktop"
               "applications:obsidian.desktop"
