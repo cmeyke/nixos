@@ -123,6 +123,7 @@ in
     vintagestory
     killall
     brave
+    distrobox
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
