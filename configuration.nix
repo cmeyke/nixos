@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 let
   msty = pkgs.callPackage ./msty.nix {};
@@ -202,6 +202,19 @@ in
   # system.autoUpgrade.enable  = true;
   # system.autoUpgrade.allowReboot  = true;
 
+  nixpkgs.overlays = [
+    (final: prev:
+      let
+        unstable-pkgs = import inputs.nixpkgs-unstable {
+          system = prev.system;
+          config = prev.config;
+        };
+      in
+      {
+        ollama = unstable-pkgs.ollama;
+      }
+    )
+  ];
   # List services that you want to enable:
   services.ollama = {
     enable = true;
