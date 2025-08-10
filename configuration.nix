@@ -65,7 +65,7 @@ in
   users.users.user = {
     isNormalUser = true;
     description = "user";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" "scanner" "lp" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "scanner" "lp" "docker"];
     packages = with pkgs; [ ];
   };
 
@@ -97,6 +97,7 @@ in
     zed-editor
     git
     git-crypt
+    git-credential-manager
     gnupg
     pinentry
     nixd
@@ -222,6 +223,8 @@ in
     acceleration = "cuda";
   };
   services.flatpak.enable = true;
+
+  virtualisation.docker.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
