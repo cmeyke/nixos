@@ -11,6 +11,10 @@
     enable = true;
     userName = "Carsten Meyke";
     userEmail = "carsten.meyke@gmail.com";
+    extraConfig = {
+      credential.helper = "manager";
+      credential.credentialStore = "secretservice";
+    };
   };
 
   imports = [
