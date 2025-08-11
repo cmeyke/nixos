@@ -65,7 +65,7 @@ in
   users.users.user = {
     isNormalUser = true;
     description = "user";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" "scanner" "lp" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "scanner" "lp" "docker" "openrazer"];
     packages = with pkgs; [ ];
   };
 
@@ -125,12 +125,14 @@ in
     killall
     brave
     distrobox
+    razergenie
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
     "dotnet-runtime-7.0.20"
   ];
 
+  hardware.openrazer.enable = true;
   hardware.sane.enable = true; # enables support for SANE scanners
   hardware.bluetooth.enable = true;
 
