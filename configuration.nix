@@ -126,6 +126,8 @@ in
     brave
     distrobox
     razergenie
+    usbutils
+    caligula
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
