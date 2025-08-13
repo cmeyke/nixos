@@ -75,7 +75,7 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim-full
     wget
     nfs-utils
     fastfetch
@@ -129,6 +129,7 @@ in
     usbutils
     caligula
     framesh
+    kdePackages.kcalc
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
