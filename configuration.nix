@@ -128,6 +128,7 @@ in
     razergenie
     usbutils
     caligula
+    framesh
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
