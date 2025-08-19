@@ -130,6 +130,7 @@ in
     caligula
     framesh
     kdePackages.kcalc
+    protontricks
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
