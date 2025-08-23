@@ -131,6 +131,7 @@ in
     framesh
     kdePackages.kcalc
     protontricks
+    yt-dlp
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
