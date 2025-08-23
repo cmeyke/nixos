@@ -2,11 +2,10 @@
   description = "A simple NixOS flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     plasma-manager = {
@@ -16,26 +15,11 @@
     };
   };
 
-  # outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, ... }@inputs: {
-  outputs = { self, nixpkgs, chaotic, nixpkgs-unstable, home-manager, plasma-manager, ... }@inputs: {
-    # Please replace my-nixos with your hostname
+  outputs = { self, nixpkgs, chaotic, home-manager, plasma-manager, ... }@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        # {
-        #   nixpkgs.overlays = [
-        #     (final: prev: {
-        #       unstable = import nixpkgs-unstable {
-        #         inherit prev;
-        #         system = prev.system;
-        #         config.allowUnfree = true;
-        #       };
-        #     })
-        #   ];
-        # }
-        # Import the previous configuration.nix we used,
-        # so the old configuration file still takes effect
         ./configuration.nix
         chaotic.nixosModules.nyx-cache
         chaotic.nixosModules.nyx-overlay
