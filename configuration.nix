@@ -132,6 +132,7 @@ in
     kdePackages.kcalc
     protontricks
     yt-dlp
+    kdePackages.skanpage
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
