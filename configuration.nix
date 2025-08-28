@@ -133,6 +133,7 @@ in
     protontricks
     yt-dlp
     kdePackages.skanpage
+    threema-desktop
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
