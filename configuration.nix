@@ -15,12 +15,31 @@ in
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  systemd.settings = {
+    Manager = {
+      RuntimeWatchdogSec = "30";
+      RebootWatchdogSec  = "0";
+      KExecWatchdogSec   = "0";
+    };
+  };
 
   # boot.kernelPackages = pkgs.linuxPackages_latest; # or pkgs.linuxPackages_lts
   # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
   boot.supportedFilesystems = [ "ntfs" ];
+
+  hardware.alsa.enablePersistence = true;
+  environment.etc."xdg/autostart/unmute-amd-audio.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Name=Unmute AMD Audio Workaround
+    Comment=Force unmutes the internal sound card after login
+    Exec=sh -c "sleep 5 && ${pkgs.alsa-utils}/bin/amixer -c 2 sset 'PCM',2 unmute"
+    Terminal=false
+    Hidden=false
+    NoDisplay=true
+  '';
 
   zramSwap.enable = true;
 
@@ -65,7 +84,7 @@ in
   users.users.user = {
     isNormalUser = true;
     description = "user";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" "scanner" "lp" "docker" "openrazer"];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "scanner" "lp" "docker" "openrazer" "audio"];
     packages = with pkgs; [ ];
   };
 
